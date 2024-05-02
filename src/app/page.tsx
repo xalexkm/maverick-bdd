@@ -14,7 +14,7 @@ const TopRow = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid var(--light-grey);
-  box-sizing: content-box;
+  box-sizing: border-box;
 `
 
 const MiddleRow = styled.div`
@@ -63,7 +63,8 @@ const LogInOrRegister = styled.div`
 
 const NavigationRow = styled.nav`
   width: 100%;
-  display: flex;
+  box-sizing: border-box;
+  border: 1px solid var(--light-grey);
 `
 
 const TopicButton = styled.button`
@@ -71,6 +72,7 @@ const TopicButton = styled.button`
   font-size: var(--font-size-small);
   text-transform: uppercase;
   position: relative;
+
   &:hover {
     background: var(--faint-grey);
     &:after {
@@ -82,8 +84,43 @@ const TopicButton = styled.button`
       background: var(--red);
       content: '';
     }
+    ul {
+      display: block;
+    }
   }
 `
+
+const TopicDropdown = styled.ul`
+  background: var(--white);
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  left: -1px;
+  top: 100%;
+  border: 1px solid var(--light-grey);
+`
+
+const TopicDropdownItem = styled.li`
+  display: flex;
+  width: 200px;
+  align-items: center;
+  padding: 10px 12px 10px 20px;
+  background: var(--white);
+  color: #222;
+  font-size: 16px;
+  font-weight: normal;
+  &:hover {
+    background: var(--grey);
+    color: var(--white);
+  }
+`
+
+// const Topic = ({ value }) => {
+//     const
+//
+//
+//     return
+// }
 
 const TopicButtonPremium = styled(TopicButton)`
   &:hover {
@@ -101,8 +138,6 @@ const TopicButtonPremium = styled(TopicButton)`
 `
 
 const TopicsSection = styled.section`
-  width: 100%;
-  border: 1px solid var(--light-grey);
 `
 
 export default function Home() {
@@ -126,7 +161,13 @@ export default function Home() {
         </MiddleRow>
         <NavigationRow>
             <TopicsSection>
-                <TopicButton>News</TopicButton>
+                <TopicButton>News
+                    <TopicDropdown>
+                        <TopicDropdownItem>1</TopicDropdownItem>
+                        <TopicDropdownItem>2</TopicDropdownItem>
+                        <TopicDropdownItem>3</TopicDropdownItem>
+                    </TopicDropdown>
+                </TopicButton>
                 <TopicButton>Sport</TopicButton>
                 <TopicButton>Voices</TopicButton>
                 <TopicButtonPremium>Premium</TopicButtonPremium>
