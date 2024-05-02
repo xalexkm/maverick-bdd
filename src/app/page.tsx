@@ -67,12 +67,42 @@ const NavigationRow = styled.nav`
 `
 
 const TopicButton = styled.button`
-  padding: var(--padding);
+  padding: var(--padding) var(--padding-medium);
   font-size: var(--font-size-small);
   text-transform: uppercase;
+  position: relative;
+  &:hover {
+    background: var(--faint-grey);
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      content: '';
+    }
+  }
+`
+
+const TopicButtonPremium = styled(TopicButton)`
+  &:hover {
+    background: var(--faint-cyan);
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--dark-cyan);
+      content: '';
+    }
+  }
 `
 
 const TopicsSection = styled.section`
+  width: 100%;
+  border: 1px solid var(--light-grey);
 `
 
 export default function Home() {
@@ -93,13 +123,15 @@ export default function Home() {
         </TopRow>
         <MiddleRow>
             <Logo>Maverick</Logo>
+        </MiddleRow>
+        <NavigationRow>
             <TopicsSection>
                 <TopicButton>News</TopicButton>
                 <TopicButton>Sport</TopicButton>
                 <TopicButton>Voices</TopicButton>
+                <TopicButtonPremium>Premium</TopicButtonPremium>
             </TopicsSection>
-        </MiddleRow>
-        <NavigationRow></NavigationRow>
+        </NavigationRow>
     </Wrapper>
   );
 }
