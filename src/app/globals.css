@@ -18,7 +18,9 @@
   --font-size-small: 12px;
   --font-size-logo: 32px;
   --padding: 8px;
+  --spacing: 8px;
   --padding-medium: 16px;
+  --border-thickness: 1px;
 }
 
 @media (prefers-color-scheme: dark) {

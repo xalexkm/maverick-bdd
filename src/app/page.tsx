@@ -13,7 +13,7 @@ const TopRow = styled.div`
   height: 32px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid var(--light-grey);
+  border: var(--border-thickness) solid var(--light-grey);
   box-sizing: border-box;
 `
 
@@ -29,7 +29,7 @@ const EditionSelector = styled.div`
   align-items: center;
   font-size: var(--font-size-small);
   text-transform: uppercase;
-  border-right: 1px solid var(--light-grey);
+  border-right: var(--border-thickness) solid var(--light-grey);
 `
 
 const RightSection = styled.section`
@@ -58,13 +58,13 @@ const LogInOrRegister = styled.div`
   align-items: center;
   text-transform: uppercase;
   font-size: var(--font-size-small);
-  border-left: 1px solid var(--light-grey);
+  border-left: var(--border-thickness) solid var(--light-grey);
 `
 
 const NavigationRow = styled.nav`
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--light-grey);
+  border: var(--border-thickness) solid var(--light-grey);
 `
 
 const TopicButton = styled.button`
@@ -95,9 +95,50 @@ const TopicDropdown = styled.ul`
   display: none;
   position: absolute;
   box-sizing: border-box;
-  left: -1px;
+  left: calc(0px - var(--border-thickness));
   top: 100%;
-  border: 1px solid var(--light-grey);
+  border: var(--border-thickness) solid var(--light-grey);
+`
+
+const TopicDropdownMore = styled.ul`
+  background: var(--grey);
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  left: calc(0px - var(--border-thickness));
+  top: 100%;
+  width: calc(100% + 2 * var(--border-thickness));
+  border: var(--border-thickness) solid var(--grey);
+`
+
+const TopicDropdownItemMore = styled.li`
+  background: var(--grey);
+  width: 100px;
+  display: flex;
+  color: var(--white);
+  gap: var(--spacing);
+  padding: var(--spacing) var(--padding);
+  position: relative;
+  &:hover {
+    background: var(--grey);
+    &:after {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--white);
+      content: '';
+    }
+  }
+`
+
+const TopicDropdownItemMoreSection = styled.section`
+  width: 300px;
+  padding: var(--padding);
+  margin: var(--spacing);
+  border-left: var(--border-thickness) solid var(--white);
+  border-right: var(--border-thickness) solid var(--white);
 `
 
 const TopicDropdownItem = styled.li`
@@ -115,12 +156,12 @@ const TopicDropdownItem = styled.li`
   }
 `
 
-// const Topic = ({ value }) => {
-//     const
-//
-//
-//     return
-// }
+const TopicDropdownItemPremium = styled(TopicDropdownItem)`
+  background: var(--faint-cyan);
+  &:hover {
+    background: var(--light-cyan);
+  }
+`
 
 const TopicButtonPremium = styled(TopicButton)`
   &:hover {
@@ -137,7 +178,22 @@ const TopicButtonPremium = styled(TopicButton)`
   }
 `
 
+const TopicButtonMore = styled(TopicButton)`
+  position: static;
+  &:hover {
+    background: var(--grey);
+    color: var(--white);
+    &:after {
+      display: none;
+    }
+    ul {
+      display: flex;
+    }
+  }
+`
+
 const TopicsSection = styled.section`
+  position: relative;
 `
 
 export default function Home() {
@@ -163,14 +219,39 @@ export default function Home() {
             <TopicsSection>
                 <TopicButton>News
                     <TopicDropdown>
-                        <TopicDropdownItem>1</TopicDropdownItem>
-                        <TopicDropdownItem>2</TopicDropdownItem>
-                        <TopicDropdownItem>3</TopicDropdownItem>
+                        <TopicDropdownItem>News</TopicDropdownItem>
+                        <TopicDropdownItem>Sport</TopicDropdownItem>
+                        <TopicDropdownItem>Voices</TopicDropdownItem>
                     </TopicDropdown>
                 </TopicButton>
                 <TopicButton>Sport</TopicButton>
                 <TopicButton>Voices</TopicButton>
-                <TopicButtonPremium>Premium</TopicButtonPremium>
+                <TopicButtonPremium>Premium
+                    <TopicDropdown>
+                        <TopicDropdownItemPremium>News</TopicDropdownItemPremium>
+                        <TopicDropdownItemPremium>Sport</TopicDropdownItemPremium>
+                        <TopicDropdownItemPremium>Voices</TopicDropdownItemPremium>
+                    </TopicDropdown>
+                </TopicButtonPremium>
+                <TopicButtonMore>More
+                    <TopicDropdownMore>
+                        <TopicDropdownItemMoreSection>
+                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                        </TopicDropdownItemMoreSection>
+                        <TopicDropdownItemMoreSection>
+                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                        </TopicDropdownItemMoreSection>
+                        <TopicDropdownItemMoreSection>
+                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                        </TopicDropdownItemMoreSection>
+                    </TopicDropdownMore>
+                </TopicButtonMore>
             </TopicsSection>
         </NavigationRow>
     </Wrapper>
