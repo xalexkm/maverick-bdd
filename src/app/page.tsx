@@ -103,8 +103,7 @@ const TopicDropdown = styled.ul`
 
 const TopicDropdownMore = styled.ul`
   background: var(--grey);
-  // TEMP
-  display: flex;
+  display: none;
   position: absolute;
   box-sizing: border-box;
   left: calc(0px - var(--border-thickness));
@@ -151,9 +150,12 @@ const TopicDropdownItemMoreWithArrow = ({ children }: any) => <TopicDropdownItem
 
 const TopicDropdownItemMoreSection = styled.section`
   width: 200px;
-  margin: var(--spacing-medium) var(--spacing);
-  border-left: var(--border-thickness) solid var(--white);
+  margin: var(--spacing-medium) 0;
   border-right: var(--border-thickness) solid var(--white);
+  &:first-child {
+    margin-left: var(--spacing);
+    border-left: var(--border-thickness) solid var(--white);
+  }
 `
 
 const TopicDropdownItemMoreSectionHead = styled.div`
