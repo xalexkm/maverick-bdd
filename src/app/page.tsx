@@ -102,7 +102,8 @@ const TopicDropdown = styled.ul`
 
 const TopicDropdownMore = styled.ul`
   background: var(--grey);
-  display: none;
+  // TEMP
+  display: flex;
   position: absolute;
   box-sizing: border-box;
   left: calc(0px - var(--border-thickness));
@@ -113,11 +114,12 @@ const TopicDropdownMore = styled.ul`
 
 const TopicDropdownItemMore = styled.li`
   background: var(--grey);
-  width: 100px;
   display: flex;
   color: var(--white);
   gap: var(--spacing);
-  padding: var(--spacing) var(--padding);
+  margin: 0 var(--spacing-medium);
+  text-transform: none;
+  padding: var(--padding-small) 0;
   position: relative;
   &:hover {
     background: var(--grey);
@@ -134,11 +136,40 @@ const TopicDropdownItemMore = styled.li`
 `
 
 const TopicDropdownItemMoreSection = styled.section`
-  width: 300px;
-  padding: var(--padding);
-  margin: var(--spacing);
+  width: 200px;
+  margin: var(--spacing-medium) var(--spacing);
   border-left: var(--border-thickness) solid var(--white);
   border-right: var(--border-thickness) solid var(--white);
+`
+
+const TopicDropdownItemMoreSectionHead = styled.div`
+  display: flex;
+  gap: var(--spacing);
+  text-align: left;
+  align-items: center;
+  padding: var(--padding) var(--padding-medium);
+  position: relative;
+  font-size: var(--font-size-title);
+  color: var(--white);
+  &:hover {
+    background: var(--grey);
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      content: '';
+    }
+  }
+`
+
+const RoundIcon = styled.div`
+  height: var(--icon-size);
+  width: var(--icon-size);
+  border-radius: 50%;
+  background: var(--white);
 `
 
 const TopicDropdownItem = styled.li`
@@ -236,19 +267,52 @@ export default function Home() {
                 <TopicButtonMore>More
                     <TopicDropdownMore>
                         <TopicDropdownItemMoreSection>
-                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                            <TopicDropdownItemMoreSectionHead>
+                                <RoundIcon></RoundIcon>Best
+                            </TopicDropdownItemMoreSectionHead>
+                            <TopicDropdownItemMore>Advisor</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Home & Garden</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Tech</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Broadband deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Fashion & Beauty</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Food & Drink</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Kids</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Books</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Travel & Outdoors</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sports & Fitness</TopicDropdownItemMore>
                         </TopicDropdownItemMoreSection>
                         <TopicDropdownItemMoreSection>
-                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                            <TopicDropdownItemMoreSectionHead>
+                                <RoundIcon></RoundIcon>Best
+                            </TopicDropdownItemMoreSectionHead>
+                            <TopicDropdownItemMore>Advisor</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Home & Garden</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Tech</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Broadband deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Fashion & Beauty</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Food & Drink</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Kids</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Books</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Travel & Outdoors</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sports & Fitness</TopicDropdownItemMore>
                         </TopicDropdownItemMoreSection>
                         <TopicDropdownItemMoreSection>
-                            <TopicDropdownItemMore>News</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Sport</TopicDropdownItemMore>
-                            <TopicDropdownItemMore>Voices</TopicDropdownItemMore>
+                            <TopicDropdownItemMoreSectionHead>
+                                <RoundIcon></RoundIcon>Best
+                            </TopicDropdownItemMoreSectionHead>
+                            <TopicDropdownItemMore>Advisor</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Home & Garden</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Tech</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Broadband deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Fashion & Beauty</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Deals</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Food & Drink</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Kids</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Books</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Travel & Outdoors</TopicDropdownItemMore>
+                            <TopicDropdownItemMore>Sports & Fitness</TopicDropdownItemMore>
                         </TopicDropdownItemMoreSection>
                     </TopicDropdownMore>
                 </TopicButtonMore>

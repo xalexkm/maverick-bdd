@@ -17,10 +17,14 @@
   --white: #fff;
   --font-size-small: 12px;
   --font-size-logo: 32px;
+  --font-size-title: 18px;
+  --padding-small: 4px;
   --padding: 8px;
   --spacing: 8px;
+  --spacing-medium: 16px;
   --padding-medium: 16px;
   --border-thickness: 1px;
+  --icon-size: 24px;
 }
 
 @media (prefers-color-scheme: dark) {
